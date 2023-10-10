@@ -4,6 +4,7 @@ Write an async routine called wait_n that takes in
 2 int arguments (in this order): n and max_delay
 """
 import asyncio
+import random
 from typing import List
 
 # Import the wait_random coroutine from the previous file
@@ -23,12 +24,14 @@ async def wait_n(n: int, max_delay: int) -> List[float]:
     Returns:
         List[float]: A list of delays (float values) in ascending order
     """
+
     # Using asyncio.gather to run wait_dom n times
     tasks = [wait_random(max_delay) for _ in range(n)]
+
     delays = await asyncio.gather(*tasks)
 
-    # Sort the list of delays
     delays.sort()
+
 
     return delays
 
