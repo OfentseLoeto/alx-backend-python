@@ -1,14 +1,20 @@
 #!/usr/bin/env python3
+"""
+Write an async routine called wait_n that takes in
+2 int arguments (in this order): n and max_delay
+"""
 import asyncio
 from typing import List
 
+# Import the wait_random coroutine from the previous file
 from basic_async_syntax import wait_random
 
 
 async def wait_n(n: int, max_delay: int) -> List[float]:
 
-    """Asynchronous routine that spawns wait_random n times
-       and returns the list of delays in ascending order.
+    """
+    Asynchronous routine that spawns wait_random n times
+    and returns the list of delays in ascending order.
 
     Args:
         n (int): The number of times to spawn wait_random.
