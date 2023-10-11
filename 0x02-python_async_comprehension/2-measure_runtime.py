@@ -4,7 +4,7 @@ write a measure_runtime coroutine that will execute
 async_comprehension four times in parallel using asyncio.gather.
 """
 import asyncio
-import time
+from time import perf_counter
 from async_comprehensions import async_comprehension
 
 
@@ -20,7 +20,7 @@ async def measure_runtime() -> float:
         The total runtime.
     """
 
-    start_time = time.time()
+    start_time = perf_counter()
 
     # Execute async_comprehension four times in parallel
     await asyncio.gather(
@@ -30,7 +30,7 @@ async def measure_runtime() -> float:
             async_comprehension()
     )
 
-    end_time = time.time()
+    end_time = perf_counter()
     total_runtime = end_time - start_time
 
     return total_runtime
