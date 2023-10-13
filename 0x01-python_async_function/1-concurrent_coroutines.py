@@ -28,15 +28,19 @@ async def wait_n(n: int, max_delay: int) -> List[float]:
     delays = []
     tasks = []
 
-    for _ in range(n):
+    for i in range(n):
         task = wait_random(max_delay)
-        tasks.append(task)
+        tasks.append((i, task))
 
-    for task in tasks:
+    for i, task in tasks:
         delay = await task
-        delays.append(delay)
+        delays.append((i, delay))
 
-    return delays
+    sorted_delays = sorted(delays, key=lambda x: x[0])
+
+    sorted_values = [delay for _, delay in sorted_delays]
+
+    return sorted_values
 
 
 if __name__ == "__main__":

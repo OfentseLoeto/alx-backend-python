@@ -5,7 +5,7 @@ for wait_n(n, max_delay), and returns total_time / n.
 """
 import asyncio
 import time
-from typing import List
+
 
 from concurrent_coroutines import wait_n
 
@@ -26,9 +26,7 @@ async def measure_time(n: int, max_delay: int) -> float:
     """
     # Recording the start time
     start_time = time.time()
-
-    # Calling wait_n n times
-    await wait_n(n, max_delay)
+    asyncio.run(wait_n(n, max_delay))
 
     # Recording the end time
     end_time = time.time()
@@ -38,6 +36,6 @@ async def measure_time(n: int, max_delay: int) -> float:
 
 if __name__ == "__main__":
     n = 5
-    max_delay = 2
-    average_time = asyncio.run(measure_time(n, max_delay))
-    print(f"Average execution time per call: {average_time:.6f} seconds")
+    max_delay = 9
+    average_time = measure_time(n, max_delay)
+    print(average_time)

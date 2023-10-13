@@ -3,11 +3,12 @@ import asyncio
 
 from tasks import task_wait_random
 
-async def main():
-    max_delay = 5
-    num_tasks = 5
-    tasks = [task_wait_random(max_delay) for _ in range(num_tasks)]
-    await asyncio.gather(*tasks)
 
-if __name__ == "__main__":
-    asyncio.run(main())
+task_wait_n = __import__('4-tasks').task_wait_n
+
+n = 5
+max_delay = 6
+
+print(asyncio.run(task_wait_n(n, max_delay)))
+
+
