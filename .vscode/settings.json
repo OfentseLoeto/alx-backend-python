@@ -1,0 +1,20 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "MyLocalDB",
+            "database": "ALX_prodev",
+            "username": "theo",
+            "password": "040354a/A",
+            "connectionTimeout": 160
+        }
+    ]
+}
