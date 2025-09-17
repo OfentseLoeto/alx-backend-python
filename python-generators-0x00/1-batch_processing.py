@@ -3,11 +3,11 @@ import mysql.connector
 import os
 
 DB_HOST = os.getenv('MYSL_HOST', 'localhost')
-DB_USER = os.getnv('MYSQL_USER', 'theo')
+DB_USER = os.getenv('MYSQL_USER', 'theo')
 DB_PASS = os.getenv('MYSQL_PASSWORD', 'theo1234')
 DB_NAME = os.getenv('MYSQL_DB', 'ALX_prodev')
 
-def stream_user_batch(batch_size):
+def stream_users_batches(batch_size):
     """Generator that fetches rows from user_data in batches.
        Each yield gives a list (batch) of rows.
     """
