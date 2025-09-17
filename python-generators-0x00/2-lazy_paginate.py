@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 seed = __import__('seed')
 
-def paginate_user(page_size, offset):
+def paginate_users(page_size, offset):
     """
     Fetches one 'page' of user in the database.
     - page_size = how many users per page.
