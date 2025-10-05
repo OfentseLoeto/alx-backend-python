@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-^ob55)pkg^#@$*-+xqvrrn)og+$s2+ka@wd^7b97*p0$b5w!+7'
+SECRET_KEY = 'django-insecure-^79d18)u21k4ln*k^*vvaath@3*+cjdfs-k5mta!14jxs14947'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -124,3 +124,4 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'chats.User'
+
